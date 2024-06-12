@@ -40,7 +40,7 @@ let { title , brand ,status, url, token} = Astro.props;
 			})
 
 			const { data } = await response.json()
-			return data.is_active
+			return data?.is_active
 	}
 
 	document.addEventListener('DOMContentLoaded', () => {

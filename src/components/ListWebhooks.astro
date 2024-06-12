@@ -30,7 +30,7 @@ const sectionsPromise = Object.keys(webhooks).map(async (key) => {
     })
 
     const { data } = await response.json()
-    return { url, brand: e.brand, token: env_token, name: e.name, status: data.is_active}
+    return { url, brand: e.brand, token: env_token, name: e.name, status: data?.is_active}
   }))
 
   return { key, hooks };
