@@ -1,0 +1,78 @@
+{
+  "CL": [
+    {
+      "id": 27672386,
+      "brand": "UF",
+      "name": "Ultimate Fitness"
+    },
+    {
+      "id": 27628596,
+      "brand": "AR",
+      "name": "Around"
+    },
+    {
+      "id": 28168024,
+      "brand": "CC",
+      "name": "Camillas Chile"
+    },
+    {
+      "id": 27321515,
+      "brand": "AF",
+      "name": "Aqua Force"
+    },
+    {
+      "id": 27316203,
+      "brand": "FC",
+      "name": "First Care"
+    },
+    {
+      "id": 27244649,
+      "brand": "TF",
+      "name": "Terra Force"
+    },
+    {
+      "id": 27218943,
+      "brand": "TS",
+      "name": "Top Spin"
+    }
+  ],
+  "PE": [
+    {
+      "id": 28116767,
+      "brand": "UF",
+      "name": "Ultimate Fitness"
+    },
+    {
+      "id": 27927840,
+      "brand": "TF",
+      "name": "Terra Force"
+    },
+    {
+      "id": 27872683,
+      "brand": "AR",
+      "name": "Around"
+    }
+  ],
+  "CO": [
+    {
+      "id": 27660297,
+      "brand": "UF",
+      "name": "Ultimate Fitness"
+    },
+    {
+      "id": 27526169,
+      "brand": "AF",
+      "name": "Aqua Force"
+    },
+    {
+      "id": 27927916,
+      "brand": "TF",
+      "name": "Terra Force"
+    },
+    {
+      "id": 27927910,
+      "brand": "AR",
+      "name": "Around"
+    }
+  ]
+}
