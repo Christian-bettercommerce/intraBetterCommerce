@@ -5,7 +5,6 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
   const {url, token} = body;
-  console.log(url,token)
 
   const response = await fetch(url, {
     method: 'PUT',
