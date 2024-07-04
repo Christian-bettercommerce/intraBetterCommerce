@@ -25,7 +25,7 @@ export const POST: APIRoute = async ({ request }) => {
     return
   }))
   const result = product_big.filter(element => element !== undefined && element !== null)
-  console.log(result)
+
   if(result.length > 0){
     const { fileBuffer } = generateXLSXFile(result)
     //await sendEmail(fileBuffer)

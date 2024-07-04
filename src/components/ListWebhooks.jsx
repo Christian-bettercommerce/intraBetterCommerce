@@ -16,7 +16,6 @@ export default function ListWebhooks(){
   useEffect(() => {
     const fetchData = async () => {
       const hk = await getHooks();
-      console.log(hk)
       const [cl, pe, co] = hk
       setChile(cl);
       setColombia(co);
