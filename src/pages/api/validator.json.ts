@@ -6,35 +6,38 @@ export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
   const body = await request.json();
-  const data = body.filter((e : any) => e['SKU '] !== undefined && e['SKU '] !== null).map((e : any) => e);
+  const data = body.filter((e : any) => e['SKU '] !== undefined && e['SKU '] !== null && e['ID'] !== undefined && e['ID'] !== null).map((e : any) => e);
   const product_big = await Promise.all(data.map(async (element : any) => {
-    const percentage_discount =((((element['PRECIO OFERTA']) - (element['PRECIO CAMPANA'] * 1000)) * 100) / (element['PRECIO OFERTA'] * 1000))
+    const percentage_discount =((((element['PRECIO OFERTA']) - (element['PRECIO CAMPANA'] )) * 100) / (element['PRECIO OFERTA'] ))
     if(percentage_discount > (element['PORCENTAJE MAX DSCTO'] * 100)){
       return {...element, message : "Producto excede el porcentaje maximo de descuento"}
     }
-    const [data] = await getProduct(element['SKU '])
-    if(!data){
+    const data = await getProduct(element['ID'])
+    const product = data.variants.find((variant: any) => variant.sku == element['SKU '])
+
+    if(!product){
       return {...element, message : "No se encontro informacion del producto"}
     }
 
-    if(parseInt(data.price) != (element['PRECIO NORMAL ACTUAL BC']) || parseInt(data.sale_price) != (element['PRECIO OFERTA ACTUAL BC'])){
-      return {...element, "PRECIO BIGCOMMERCE":data.price, "PRECIO VENTA BIGCOMMERCE": data.sale_price, message : "Diferencia en los precios actuales con bigcommerce"}
+    if(parseInt(product.price) != (element['PRECIO NORMAL ACTUAL BC']) || parseInt(product.sale_price) != (element['PRECIO OFERTA ACTUAL BC'])){
+      return {...element, "PRECIO BIGCOMMERCE":product.price, "PRECIO VENTA BIGCOMMERCE": product.sale_price, message : "Diferencia en los precios actuales con bigcommerce"}
     }
     return
   }))
   const result = product_big.filter(element => element !== undefined && element !== null)
+  console.log(result)
   if(result.length > 0){
     const { fileBuffer } = generateXLSXFile(result)
-    await sendEmail(fileBuffer)
+    //await sendEmail(fileBuffer)
     return new Response(JSON.stringify({status : false}));
   }
   return new Response(JSON.stringify({status : true}));
 }
 
-const getProduct = async (sku : string) => {
+const getProduct = async (id : string) => {
   const store_hash = import.meta.env.PUBLIC_STORE_CL;
   const token = import.meta.env.PUBLIC_CL_UF;
-  const url = `https://api.bigcommerce.com/stores/${store_hash}/v3/catalog/products?is_visible=1&availability=available&sort=id&direction=desc&include=images,variants&sku=${sku}`;
+  const url = `https://api.bigcommerce.com/stores/${store_hash}/v3/catalog/products/${id}?include=variants`;
   const response = await fetch(url, {
     method: 'GET',
     headers:{
