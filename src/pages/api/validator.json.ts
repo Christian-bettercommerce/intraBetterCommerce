@@ -28,7 +28,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   if(result.length > 0){
     const { fileBuffer } = generateXLSXFile(result)
-    //await sendEmail(fileBuffer)
+    await sendEmail(fileBuffer)
     return new Response(JSON.stringify({status : false}));
   }
   return new Response(JSON.stringify({status : true}));
