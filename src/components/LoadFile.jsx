@@ -5,6 +5,8 @@ import * as XLSX from 'xlsx';
 function FileUploader() {
   const [file, setFile] = useState(null);
   const [jsonData, setJsonData] = useState(null);
+  const [dropzone, setDropzone] = useState(null);
+  const [fileInput, setfileInput] = useState(null);
 
   const sendDataToApi = async (body) => {
     const response = await fetch('/api/validator.json', {
@@ -22,6 +24,9 @@ function FileUploader() {
   useEffect(() => {
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('dropzone-file');
+
+    setDropzone(dropzone)
+    setfileInput(fileInput)
 
     fileInput.addEventListener('change', (event) => {
       const files = event.target.files;
