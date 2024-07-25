@@ -5,8 +5,6 @@ import * as XLSX from 'xlsx';
 function FileUploader() {
   const [file, setFile] = useState(null);
   const [jsonData, setJsonData] = useState(null);
-  const [dropzone, setDropzone] = useState(null);
-  const [fileInput, setfileInput] = useState(null);
 
   const sendDataToApi = async (body) => {
     const response = await fetch('/api/validator.json', {
@@ -24,9 +22,6 @@ function FileUploader() {
   useEffect(() => {
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('dropzone-file');
-
-    setDropzone(dropzone)
-    setfileInput(fileInput)
 
     fileInput.addEventListener('change', (event) => {
       const files = event.target.files;
@@ -46,7 +41,7 @@ function FileUploader() {
         setFile(files[0]);
       }
     });
-  }, [dropzone, fileInput]);
+  }, []);
 
   useEffect(() => {
     if (file) {
@@ -54,28 +49,22 @@ function FileUploader() {
       reader.onload = (event) => {
         const workbook = XLSX.read(event.target.result, { type: 'array' });
         const firstSheetName = workbook.SheetNames[0];
-        const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName],{
+        const jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName], {
           header: (header) => decodeURIComponent(header)
         });
-        setJsonData(jsonData);
+  
+        // Envía el JSON a la API aquí
+        sendDataToApi(jsonData).then((res) => {
+          if (res.status) {
+            toast('Archivo validado correctamente', 'success');
+          } else {
+            toast('Revisa tu correo 📫', 'error');
+          }
+        });
       };
       reader.readAsArrayBuffer(file);
-      
     }
   }, [file]);
-
-  useEffect(async () => {
-    if(jsonData){
-      async function sendData() {
-        const res = await sendDataToApi(jsonData);
-        if(res.status){
-          return toast('Archivo validado correctamente', 'success');
-        }
-        return toast('Revisa tu correo 📫', 'error');
-      }
-      sendData();
-    }
-  },[jsonData])
   
   return (
     <>
