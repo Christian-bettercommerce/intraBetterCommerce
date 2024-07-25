@@ -56,7 +56,7 @@ function FileUploader() {
         // Envía el JSON a la API aquí
         sendDataToApi(jsonData).then((res) => {
           if (res.status) {
-            toast('Archivo validado correctamente', 'success');
+            toast('Archivo validado correctamente 🥳', 'success');
           } else {
             toast('Revisa tu correo 📫', 'error');
           }
