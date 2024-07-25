@@ -41,7 +41,7 @@ function FileUploader() {
         setFile(files[0]);
       }
     });
-  }, []);
+  }, [dropzone, fileInput]);
 
   useEffect(() => {
     if (file) {
@@ -64,12 +64,8 @@ function FileUploader() {
       async function sendData() {
         const res = await sendDataToApi(jsonData);
         if(res.status){
-          setFile(null)
-          setJsonData(null)
           return toast('Archivo validado correctamente', 'success');
         }
-        set(null)
-        setFile(null)
         return toast('Revisa tu correo 📫', 'error');
       }
       sendData();
