@@ -69,7 +69,8 @@ const sendEmail = (fileBuffer:any) => {
   sendSmtpEmail.sender = { "name": "Validador ", "email": "intranet@no-reply.cl" };
   sendSmtpEmail.to = [
     { "email": "dpinto@bettercommerce.cl" },
-    { "email": "christian.quiroz@bettercommerce.cl" }
+    { "email": "christian.quiroz@bettercommerce.cl" },
+    { "email": "ecommerce@bettercommerce.cl" },
   ];
   //sendSmtpEmail.replyTo = { "email": "christian.quiroz@bettercommerce.cl" };
   //sendSmtpEmail.headers = { "Some-Custom-Name": "unique-id-1234" };
