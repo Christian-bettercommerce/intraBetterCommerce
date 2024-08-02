@@ -19,7 +19,31 @@ function FileUploader() {
     return res
   };
 
-  const formatFile = (file) => {
+  useEffect(() => {
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('dropzone-file');
+
+    fileInput.addEventListener('change', (event) => {
+      const files = event.target.files;
+      if (files!== null && files.length > 0) {
+        setFile(files[0]);
+      }
+    });
+
+    dropzone.addEventListener('dragover', (event) => {
+      event.preventDefault();
+    });
+
+    dropzone.addEventListener('drop', (event) => {
+      event.preventDefault();
+      const files = event.dataTransfer.files;
+      if (files!== null && files.length > 0) {
+        setFile(files[0]);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
     if (file) {
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -40,30 +64,7 @@ function FileUploader() {
       };
       reader.readAsArrayBuffer(file);
     }
-  }
-  useEffect(() => {
-    const dropzone = document.getElementById('dropzone');
-    const fileInput = document.getElementById('dropzone-file');
-
-    fileInput.addEventListener('change', (event) => {
-      const files = event.target.files;
-      if (files!== null && files.length > 0) {
-        formatFile(files[0]);
-      }
-    });
-
-    dropzone.addEventListener('dragover', (event) => {
-      event.preventDefault();
-    });
-
-    dropzone.addEventListener('drop', (event) => {
-      event.preventDefault();
-      const files = event.dataTransfer.files;
-      if (files!== null && files.length > 0) {
-        formatFile(files[0]);
-      }
-    });
-  }, []);
+  }, [file]);
   
   return (
     <>
