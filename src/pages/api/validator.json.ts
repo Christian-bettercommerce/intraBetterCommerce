@@ -19,7 +19,7 @@ export const POST: APIRoute = async ({ request }) => {
       return {...element, message : "No se encontro informacion del producto"}
     }
 
-    if(parseInt(product.price) != (element['PRECIO NORMAL ACTUAL BC']) || parseInt(product.sale_price) != (element['PRECIO OFERTA ACTUAL BC'])){
+    if(parseInt(product.price) != (element['PRECIO OFERTA']) || parseInt(product.sale_price) != (element['PRECIO OFERTA ACTUAL BC'])){
       return {...element, "PRECIO BIGCOMMERCE":product.price, "PRECIO VENTA BIGCOMMERCE": product.sale_price, message : "Diferencia en los precios actuales con bigcommerce"}
     }
     return
