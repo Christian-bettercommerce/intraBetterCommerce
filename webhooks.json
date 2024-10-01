@@ -3,81 +3,96 @@
     {
       "id": 27672386,
       "brand": "UF",
-      "name": "Ultimate Fitness"
+      "name": "Ultimate Fitness",
+      "url": "https://preapi.ultimatefitness.cl/api"
     },
     {
       "id": 27628596,
       "brand": "AR",
-      "name": "Around"
+      "name": "Around",
+      "url": "https://preapi.around.cl/api"
     },
     {
       "id": 28168024,
       "brand": "CC",
-      "name": "Camillas Chile"
+      "name": "Camillas Chile",
+      "url": "https://preapi.camillaschile.cl/api"
     },
     {
       "id": 27321515,
       "brand": "AF",
-      "name": "Aqua Force"
+      "name": "Aqua Force",
+      "url": "https://preapi.aquaforce.cl/api"
     },
     {
       "id": 27316203,
       "brand": "FC",
-      "name": "First Care"
+      "name": "First Care",
+      "url": "https://preapi.firstcare.cl/api"
     },
     {
       "id": 27244649,
       "brand": "TF",
-      "name": "Terra Force"
+      "name": "Terra Force",
+      "url":"https://preapi.terraforce.cl/api"
     },
     {
       "id": 27218943,
       "brand": "TS",
-      "name": "Top Spin"
+      "name": "Top Spin",
+      "url": "https://preapi.tspin.cl/api"
     },
     {
       "id": 28339552,
       "brand": "UC",
-      "name": "Ultimate Clothing"
+      "name": "Ultimate Clothing",
+      "url": "https://preapi.ultimateclothing.cl/api"
     }
   ],
   "PE": [
     {
       "id": 28116767,
       "brand": "UF",
-      "name": "Ultimate Fitness"
+      "name": "Ultimate Fitness",
+      "url": "https://api.ultimatefitness.pe/api"
     },
     {
       "id": 27927840,
       "brand": "TF",
-      "name": "Terra Force"
+      "name": "Terra Force",
+      "url": "https://api.terraforce.pe/api"
     },
     {
-      "id": 27872683,
-      "brand": "AR",
-      "name": "Around"
+      "id": 28573622,
+      "brand": "FC",
+      "name": "First Care",
+      "url": "https://api.firstcare.pe/api"
     }
   ],
   "CO": [
     {
       "id": 27660297,
       "brand": "UF",
-      "name": "Ultimate Fitness"
+      "name": "Ultimate Fitness",
+      "url": "https://api.ultimatefitness.com.co/api"
     },
     {
       "id": 27526169,
       "brand": "AF",
-      "name": "Aqua Force"
+      "name": "Aqua Force",
+      "url": "https://api.aquaforce.com.co/api"
     },
     {
       "id": 27927916,
       "brand": "TF",
-      "name": "Terra Force"
+      "name": "Terra Force",
+      "url": "https://api.terraforce.com.co/api"
     },
     {
       "id": 27927910,
       "brand": "AR",
-      "name": "Around"
+      "name": "Around",
+      "url": "https://api.aroundtravel.com.co/api"
     }
   ]
 }

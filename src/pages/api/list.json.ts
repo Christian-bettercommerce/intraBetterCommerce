@@ -17,10 +17,12 @@ const typedWebhooks: Webhooks = webhooks as Webhooks;
 
 export const GET: APIRoute = async ({ request }) => {
   const hooks = await Promise.all(Object.keys(webhooks).map(key => {
-    const key_store = `PUBLIC_STORE_${key}`
-    const env_store = import.meta.env[key_store]
-  
+    let key_store = `PUBLIC_STORE_${key}`
+    let env_store = import.meta.env[key_store]
     return Promise.all(typedWebhooks[key].map(async e => {
+      if(e.brand === "FC" && key === "PE"){
+        env_store = import.meta.env.PUBLIC_STORE_CL
+      }
       const key_token = `PUBLIC_${key}_${e.brand}`
       const env_token = import.meta.env[key_token]
       const url = `https://api.bigcommerce.com/stores/${env_store}/v3/hooks/${e.id}`

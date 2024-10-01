@@ -33,7 +33,7 @@ const Navbar = () => {
               <a href="/validator" class={`block py-2 px-3 rounded md:p-0 ${currentPath === '/validator' ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700'}`} aria-current={currentPath === '/validator' ? 'page' : undefined}>Validador</a>
             </li>
             <li>
-              <a href="#" class={`block py-2 px-3 rounded md:p-0 ${currentPath === '#' ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700'}`} aria-current={currentPath === '#' ? 'page' : undefined}>Sincronizacion</a>
+              <a href="/sync" class={`block py-2 px-3 rounded md:p-0 ${currentPath === '/sync' ? 'text-white bg-blue-700 md:bg-transparent md:text-blue-700 md:dark:text-blue-500' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent dark:border-gray-700'}`} aria-current={currentPath === '/sync' ? 'page' : undefined}>Sincronizacion</a>
             </li>
           </ul>
         </div>
