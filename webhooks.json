@@ -54,19 +54,19 @@
       "id": 28116767,
       "brand": "UF",
       "name": "Ultimate Fitness",
-      "url": "https://api.ultimatefitness.pe/api"
+      "url": "https://preapi.ultimatefitness.pe/api"
     },
     {
       "id": 27927840,
       "brand": "TF",
       "name": "Terra Force",
-      "url": "https://api.terraforce.pe/api"
+      "url": "https://preapi.terraforce.pe/api"
     },
     {
       "id": 28573622,
       "brand": "FC",
       "name": "First Care",
-      "url": "https://api.firstcare.pe/api"
+      "url": "https://preapi.firstcare.pe/api"
     }
   ],
   "CO": [
@@ -74,25 +74,25 @@
       "id": 27660297,
       "brand": "UF",
       "name": "Ultimate Fitness",
-      "url": "https://api.ultimatefitness.com.co/api"
+      "url": "https://preapi.ultimatefitness.com.co/api"
     },
     {
       "id": 27526169,
       "brand": "AF",
       "name": "Aqua Force",
-      "url": "https://api.aquaforce.com.co/api"
+      "url": "https://preapi.aquaforce.com.co/api"
     },
     {
       "id": 27927916,
       "brand": "TF",
       "name": "Terra Force",
-      "url": "https://api.terraforce.com.co/api"
+      "url": "https://preapi.terraforce.com.co/api"
     },
     {
       "id": 27927910,
       "brand": "AR",
       "name": "Around",
-      "url": "https://api.aroundtravel.co/api"
+      "url": "https://preapi.aroundtravel.co/api"
     }
   ]
 }
